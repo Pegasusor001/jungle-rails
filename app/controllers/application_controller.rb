@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  # ActionController inherient from base
+  # cart, enhanced are globally available as they are classed at higher level. 
   protect_from_forgery with: :exception
 
   private
@@ -30,3 +32,15 @@ class ApplicationController < ActionController::Base
   end
 
 end
+
+
+# class A 
+#   intialize a
+
+# end 
+
+# class B extend A
+#   A.a will be inherit in B 
+# end 
+
+
