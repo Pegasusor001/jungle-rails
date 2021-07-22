@@ -20,7 +20,6 @@
       </thead>
       <tbody>
         <% @order.line_items.each do |item| %>
-          <% debug @order%>
           <%= render 'item', product: item.product, quantity: item[:quantity].to_i %>
         <% end %>
       </tbody>
