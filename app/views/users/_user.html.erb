@@ -1,0 +1,17 @@
+<tr>
+  <td>
+    <h4><%= user.first_name %></h4>
+  </td>
+  <td>
+    <h4><%= user.last_name %></h4>
+  </td>
+  <td>
+    <h4><%= user.email %></h4>
+  </td>
+  <td>
+    <h4><%= user.password %></h4>
+  </td>
+  <td>
+    <%= link_to fa_icon('trash'), [user], class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+  </td>
+</tr>
