@@ -7,6 +7,16 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
 
+  get "/login" => "login#index"
+  post "/login" => "login#login"
+  post "/logout" => "login#logout"
+
+
+  # resource :login, only: [:index] do
+  #   post :login
+  #   post :logout
+  # end 
+
   resource :cart, only: [:show] do
     post   :add_item
     post   :remove_item

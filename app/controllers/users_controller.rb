@@ -1,13 +1,7 @@
 class UsersController < ApplicationController
-  # email = User.
-  # http_basic_authenticate_with email: email, password: password
-  # User.find_by(email: 'test@email.com')&.authenticate(12345) 
 
   def index
     @users = User.all
-    password = User.find_by(email: 'test@email.com').password
-    puts @users
-    puts password
   end
 
   def new
@@ -16,7 +10,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
       redirect_to [:users], notice: 'User created!'
     else
