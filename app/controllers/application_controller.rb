@@ -4,8 +4,18 @@ class ApplicationController < ActionController::Base
   # ActionController inherient from base
   # cart, enhanced are globally available as they are classed at higher level. 
   protect_from_forgery with: :exception
-
+  
+  
   private
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    puts @current_user
+  end
+  helper_method :current_user
+
+  # def authorize
+  #   redirect_to '/login' unless current_user
+  # end
 
   def cart
     @cart ||= cookies[:cart].present? ? JSON.parse(cookies[:cart]) : {}

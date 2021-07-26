@@ -30,9 +30,13 @@
           <%= link_to 'About Us', about_index_path %>
         </li>
 
+        <% if session[:user_id] %>
         <li>
-          <%= link_to 'User', users_path %>
+          <%= link_to "Logout", '/logout' %>
         </li>
+        <% else %>
+        <li><%= link_to 'Login', '/login' %><li><li><%= link_to 'Register', users_path %><li>
+        <% end %>
         
       </ul>
       <ul class="nav navbar-nav navbar-right">
