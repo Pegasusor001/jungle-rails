@@ -1,6 +1,10 @@
 <h1>Register</h1>
 <br>
 
+  <li> <%= @existUser[1].email %></li>
+  <li> <%= @existUser[1].password %></li>
+
+
 <%= form_for(@user) do |f| %>
   <div class="form-group">
   <h5>First Name:</h5> <%= f.text_field :first_name, class:"form-control", placeholder:"first name?"%>

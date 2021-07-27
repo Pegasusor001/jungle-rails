@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
     puts @current_user
   end
   helper_method :current_user
+  # a ||= b 等同于语句 a || a = b 
 
   def cart
     @cart ||= cookies[:cart].present? ? JSON.parse(cookies[:cart]) : {}
