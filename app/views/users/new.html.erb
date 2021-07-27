@@ -1,51 +1,25 @@
-<section class="users-new">
+<h1>Register</h1>
+<br>
 
-  <header class="page-header">
-    <h1>Admin &raquo; New User</h1>
-  </header>
-
-  <div class="well">
-    <%= link_to 'All Users', [:users], class: 'btn btn-info' %>
+<%= form_for(@user) do |f| %>
+  <div class="form-group">
+  <h5>First Name:</h5> <%= f.text_field :first_name, class:"form-control", placeholder:"first name?"%>
   </div>
 
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-1">
-      <%= form_for [@user] do |form| %>
-
-        <% if form.object.errors.any? %>
-          <div class="alert alert-danger">
-            <strong>The following errors prevented saving:</strong>
-            <ul>
-              <% form.object.errors.full_messages.each do |error| %>
-                <li><%= error %></li>
-              <% end %>
-            </ul>
-          </div>
-        <% end %>
-
-        <div class="form-group">
-          <%= form.label :first_name %>
-          <%= form.text_field :first_name, class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :last_name %>
-          <%= form.text_field :last_name, class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :email %>
-          <%= form.text_field :email, class: 'form-control' %>
-        </div>
-
-        <div class="form-group">
-          <%= form.label :password %>
-          <%= form.text_field :password, class: 'form-control' %>
-        </div>
-        
-        <%= form.submit 'Create User', class: 'btn btn-primary' %>
-      <% end %>
-    </div>
+  <div class="form-group">
+  <h5>Last Name:</h5> <%= f.text_field :last_name, class:"form-control", placeholder:"what is your last name?"%>
   </div>
 
-</section>
+  <div class="form-group">
+  <h5>Email:</h5> <%= f.text_field :email, class:"form-control", placeholder:"what is your email?" %>
+  </div>
+
+  <div class="form-group">
+  <h5>Password:</h5> <%= f.password_field :password, class:"form-control", placeholder:"what is your password?" %>
+  </div>
+
+  <div class="form-group">
+  <h5>Confirm Your Password:</h5> <%= f.password_field :password_confirmation, class:"form-control", placeholder:"confirm your password" %>
+  </div>
+  <%= f.submit "Register", class: 'btn btn-primary' %>
+<% end %>

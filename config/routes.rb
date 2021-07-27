@@ -2,21 +2,16 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
 
-  resources :users, except: [:edit, :update, :show]
+  
+  get '/login' => 'sessions#index'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  resources :users, only: [:new, :create]
   resources :about, only: [:index]
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
-
-  get "/login" => "login#index"
-  post "/login" => "login#login"
-  get "/logout" => "login#logout"
-
-
-  # resource :login, only: [:index] do
-  #   post :login
-  #   post :logout
-  # end 
-
+  
   resource :cart, only: [:show] do
     post   :add_item
     post   :remove_item
