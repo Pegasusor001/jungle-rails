@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-    @existUser = User.all
+    @existUsers = User.all
   end
 
   def create

@@ -1,8 +1,8 @@
 <h1>Register</h1>
 <br>
 
-  <li> <%= @existUser[1].email %></li>
-  <li> <%= @existUser[1].password %></li>
+  <li> <%= @existUsers[1].email %></li>
+  <li> <%= @existUsers[1].password %></li>
 
 
 <%= form_for(@user) do |f| %>
@@ -27,3 +27,5 @@
   </div>
   <%= f.submit "Register", class: 'btn btn-primary' %>
 <% end %>
+
+  

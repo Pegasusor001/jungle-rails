@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  # has_secure_password
+  has_secure_password
   attr_accessor :password_confirmation
   validates :first_name, presence: true, length: { minimum: 3 }
   validates :last_name, presence: true, length: { minimum: 3 }
